@@ -16,7 +16,7 @@ jobs:
         run: |
           unzip -o Tableegh-Android-gps.zip -d project
           echo "ZIP extracted"
-          find project -maxdepth 4 -type f | head -100
+          find project -maxdepth 5 -type f | head -100
 
       - name: Find Android Project
         run: |
@@ -28,7 +28,7 @@ jobs:
           fi
 
           PROJECT_DIR=$(dirname "$SETTINGS")
-          echo "PROJECT_DIR=$PROJECT_DIR" >> $GITHUB_ENV
+          echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
           echo "Android project found at: $PROJECT_DIR"
 
       - name: Setup JDK
